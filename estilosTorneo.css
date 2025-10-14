@@ -1,0 +1,131 @@
+/*estilos comunes a todas las páginas*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-image: url('teal_dragon_logo_on_yellow-gre2.jpeg');
+    background-repeat: repeat;
+    /* Repite la imagen en ambas direcciones */
+    background-size: 350px 350px;
+    /* Ajusta el tamaño de la imagen repetida */
+}
+
+/* Banner */
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #bbedcb; */
+    background-color: #ffe648;
+    padding: 10px;
+}
+
+.banner-title {
+    flex: 1;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.banner-image-left {
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.banner-image-right {
+    width: 200px;
+    height: auto;
+    margin-left: 20px;
+}
+
+/* Main content */
+.main-content {
+    display: flex;
+    padding: 20px;
+}
+
+/* Tabla central */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: #fafafa;
+}
+
+h2 {
+    text-align: center;
+}
+
+.ranking-table h2 {
+    background-color: #fafafa;
+    padding: 15px;
+    /* Opcional, para que el fondo no quede muy pegado al texto */
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #ffb648;
+}
+
+/* Título gestión */
+.gestion-title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.gestion-title h2 {
+    background-color: #f0f0f0;
+    padding: 15px;
+    /* Opcional, para que el fondo no quede muy pegado al texto */
+}
+
+/* Caja derecha */
+.right-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 10px;
+}
+
+/*Caja derecha (contacto admin)*/
+.contact-box,
+.access1-box {
+    border: 1px solid #ccc;
+    padding: 15px;
+    background-color: #fafafa;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    /* Distribuye los botones en extremos opuestos */
+    padding: 10px 10px;
+    /* Opcional: espacio interior para mejor apariencia */
+    position: fixed;
+    /* Si quieres que siempre esté visible en la parte inferior */
+    bottom: 10px;
+    /* En la parte inferior de la ventana */
+    width: 95%;
+    /* Que ocupe toda la anchura de la pantalla */
+}
+
+/* Pie de página */
+.footer button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+/*
+Paletton
+https://paletton.com/#uid=4370A1ktAPoh+T6nUR3JSNbKot1ktAPoh+T6nUR3JSNbKot1ktAPoh+T6nUR3JSNbKot1ktAPoh+T6nUR3JSNbKot1
+*/

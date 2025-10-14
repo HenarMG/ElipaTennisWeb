@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jugador - Torneo La Elipa</title>
+  <link rel="stylesheet" href="estilosTorneo.css" />
+  <style>
+    /* Main content */
+    /* Tabla central */
+    .ranking-table {
+      flex: 3;
+      margin-right: 20px;
+      width: px;
+    }
+
+    /* Pie de página */
+    .footer {
+      position: fixed;
+      bottom: 10px;
+      left: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Banner -->
+  <header>
+    <div class="banner">
+      <img src="a_cute_fat_teal_dragon_with_a_.jpeg" alt="Logo_polideportivo_dragon" alt="Logo polideportivo dragon"
+        class="banner-image-left" />
+      <div class="banner-title">RANKING TENIS <br> POLIDEPORTIVO <br>LA ELIPA</div>
+      <img src="a_cute_fat_teal_dragon_with_right.jpeg" alt="Logo_polideportivo_dragon" alt="Logo polideportivo dragon"
+        class="banner-image-right" />
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <div class="main-content">
+    <!-- Tabla de Ranking -->
+    <div class="ranking-table">
+      <h2>Perfil de Jugador</h2>
+      <table>
+        <tr>
+          <th>Levi</th>
+          <th>Teléfono: 686984452</th>
+        </tr>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th>Oponente</th>
+            <th>Resultado</th>
+            <th>Fecha</th>
+            <th>Comentario</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Eren</td>
+            <td>6/2, 6/3</td>
+            <td>17-09-2025</td>
+            <td>Buen tiempo</td>
+
+          </tr>
+          <tr>
+            <td>Orca</td>
+            <td>7/5, 6/4</td>
+            <td>19-09-2025</td>
+            <td>Reñido</td>
+
+          </tr>
+          <tr>
+            <td>Apolo</td>
+            <td>6/3, 6/3</td>
+            <td>20-09-2025</td>
+            <td>Un poco de lluvia</td>
+
+          </tr>
+          <tr>
+            <td>Eren</td>
+            <td>6/4, 6/1</td>
+            <td>21-09-2025</td>
+            <td>Eren es un tramposo</td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Caja derecha -->
+    <!-- Caja derecha -->
+    <div class="right-box">
+      <div class="contact-box">
+        <h3>Contacta con el admin</h3>
+        <p>Teléfono: 123-456-7890</p>
+      </div>
+
+      <!-- Caja acceso -->
+      <div class="access-box">
+        <div class="access1-box">
+          <h3>Acceso admin</h3>
+          <form id="adminForm" onsubmit="verificarContraseña(); return false;">
+            <p>Contraseña: <input type="password" id="password" placeholder="Introduce la contraseña"
+                aria-label="Contraseña" required></p>
+            <p>
+              <button type="submit">Acceder</button>
+              <button type="button" onclick="location.href='pantalla_inicio.html'">Salir</button>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botón en la parte inferior izquierda -->
+  <div class="footer">
+    <button onclick="location.href='pantalla_inicio.html'">Ver Ranking de Jugadores</button>
+  </div>
+
+  <script>
+    function verificarContraseña() {
+      const campoPassword = document.getElementById('password');
+      const contraseña = campoPassword.value;
+      if (contraseña === 'elipatenis') {
+        // Redirigir a la pantalla de administración
+        window.location.href = 'pantalla_admin.html';
+      } else {
+        // Mostrar alerta y limpiar el campo
+        alert('La contraseña no es correcta.');
+        campoPassword.value = '';
+      }
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADMIN - Ranking Tenis - Torneo La Elipa</title>
+    <link rel="stylesheet" href="estilosTorneo.css" />
+    <style>
+        /* Gestión y centro */
+        .gestion-centro {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Contenido centrado: cajas */
+        .center-cajas {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        /* Caja de añadir jugador y partido */
+        .caja {
+            border: 1px solid #ccc;
+            padding: 15px;
+            width: 300px;
+            background-color: #fafafa;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Títulos de las cajas */
+        .caja h3 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        /* Campos y botones */
+        .campo {
+            margin-bottom: 10px;
+        }
+
+        .campo label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Estilo para inputs y select */
+        input[type="text"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Botón aceptar */
+        .boton {
+            width: 100%;
+            padding: 8px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .boton:hover {
+            background-color: #3d8c41;
+        }
+
+        /* Pie de página */
+        .footer {
+            position: fixed;
+            bottom: 10px;
+            left: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Banner -->
+    <header>
+        <div class="banner">
+            <img src="a_cute_fat_teal_dragon_with_a_.jpeg" alt="Logo_polideportivo_dragon"
+                alt="Logo polideportivo dragon" class="banner-image-left" />
+            <div class="banner-title">RANKING TENIS <br> POLIDEPORTIVO <br>LA ELIPA</div>
+            <img src="a_cute_fat_teal_dragon_with_right.jpeg" alt="Logo_polideportivo_dragon"
+                alt="Logo polideportivo dragon" class="banner-image-right" />
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+
+        <!-- Gestión administrador y contenido central -->
+        <div class="gestion-centro">
+
+            <!-- Título Gestión -->
+            <div class="gestion-title">
+                <h2>Gestión administrador</h2>
+            </div>
+
+            <!-- Cajas centradas -->
+            <div class="center-cajas">
+                <!-- Añadir Jugador -->
+                <div class="caja" id="añadir-jugador">
+                    <h3>Añadir Jugador</h3>
+                    <div class="campo">
+                        <label for="nombreJugador">Nombre:</label>
+                        <input type="text" id="nombreJugador" placeholder="Escribe el nombre del jugador" />
+                    </div>
+                    <div class="campo">
+                        <label for="telefonoJugador">Teléfono:</label>
+                        <input type="text" id="telefonoJugador"
+                            placeholder="Escribe el télefono del jugador, sólo números" />
+                    </div>
+                    <button class="boton" onclick="guardaYLimpiaJugador()">Aceptar</button>
+                </div>
+
+                <!-- Añadir Partido -->
+                <div class="caja" id="añadir-partido">
+                    <h3>Añadir Partido</h3>
+                    <div class="campo">
+                        <label for="fechaPartido">Fecha:</label>
+                        <input type="date" id="fechaPartido" />
+                    </div>
+                    <div class="campo">
+                        <label for="ganadorPartido">Ganador:</label>
+                        <select id="ganadorPartido">
+                            <option value="">Selecciona</option>
+                            <option value="Jugador1">Eren</option>
+                            <option value="Jugador2">Levi</option>
+                            <option value="Jugador3">Apolo</option>
+                            <option value="Jugador4">Orca</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="otroJugador">Otro jugador:</label>
+                        <select id="otroJugador">
+                            <option value="">Selecciona</option>
+                            <option value="Jugador1">Eren</option>
+                            <option value="Jugador2">Levi</option>
+                            <option value="Jugador3">Apolo</option>
+                            <option value="Jugador4">Orca</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="comentario">Comentario:</label>
+                        <textarea id="comentario" rows="3"
+                            placeholder="Escribe un comentario sobre el partido"></textarea>
+                    </div>
+                    <div class="campo">
+                        <label for="resultado">Resultado:</label>
+                        <input type="text" id="resultado" placeholder="Escribe los puntos de los sets" />
+                    </div>
+                    <button class="boton" onclick="limpiarCamposPartido()">Aceptar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Caja derecha -->
+        <div class="right-box">
+            <div class="contact-box">
+                <h3>Contacta con el admin</h3>
+                <p>Teléfono: 123-456-7890</p>
+            </div>
+
+            <!-- Caja acceso -->
+            <div class="access-box">
+                <div class="access1-box">
+                    <h3>Acceso admin</h3>
+                    <p>Contraseña: <input placeholder="Pulsa SALIR al terminar"></p>
+                    <p><button onclick="location.href='pantalla_inicio.html'">Salir</button></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón en la parte inferior izquierda -->
+    <div class="footer">
+        <button onclick="location.href='pantalla_inicio.html'">Ir al Ranking</button>
+        <button onclick="location.href='pantalla_jugador.html'">Ver al primer jugador del ranking</button>
+    </div>
+
+    <script>
+        function guardaYLimpiaJugador() {
+            // Obtener los valores de los campos
+            const nombre = document.getElementById('nombreJugador').value.trim();
+            const telefono = document.getElementById('telefonoJugador').value.trim();
+
+            // Verificar si están en blanco
+            if (!nombre && !telefono) {
+                alert('Por favor, escribe el nombre y el teléfono.');
+                return;
+            }
+            if (!nombre) {
+                alert('Falta el nombre del jugador.');
+                return;
+            }
+            if (!telefono) {
+                alert('Falta el teléfono del jugador.');
+                return;
+            }
+
+            // Validar que el teléfono sea solo números
+            const soloNumeros = /^\d+$/; // expresión regular para solo dígitos
+            if (!soloNumeros.test(telefono)) {
+                alert('El teléfono debe contener solo números.');
+                return;
+            }
+
+            // Si todo está completo
+            alert('Jugador guardado correctamente.');
+            // Limpia los campos
+            document.getElementById('nombreJugador').value = '';
+            document.getElementById('telefonoJugador').value = '';
+        }
+
+        function limpiarCamposPartido() {
+            const fecha = document.getElementById('fechaPartido').value.trim();
+            const ganador = document.getElementById('ganadorPartido').value;
+            const otroJugador = document.getElementById('otroJugador').value;
+            const resultado = document.getElementById('resultado').value.trim();
+
+            if (!fecha || !ganador || !otroJugador || !resultado) {
+                alert('Por favor, rellena todos los campos requeridos.');
+                return;
+            }
+            alert('Partido guardado correctamente.');
+            document.getElementById('fechaPartido').value = '';
+            document.getElementById('ganadorPartido').value = '';
+            document.getElementById('otroJugador').value = '';
+            document.getElementById('comentario').value = '';
+            document.getElementById('resultado').value = '';
+        }
+    </script>
+
+</body>
+
+</html>

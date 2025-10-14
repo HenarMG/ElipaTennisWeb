@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio - Ranking Tenis - Torneo La Elipa</title>
+  <link rel="stylesheet" href="estilosTorneo.css" />
+  <style>
+    /* Main content */
+    /* Tabla central */
+    .ranking-table {
+      flex: 3;
+      margin-right: 20px;
+    }
+
+    /* Pie de página */
+    .footer {
+      position: fixed;
+      bottom: 10px;
+      left: 20px;
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Banner -->
+  <header>
+    <div class="banner">
+      <img src="a_cute_fat_teal_dragon_with_a_.jpeg" alt="Logo_polideportivo_dragon" alt="Logo polideportivo dragon"
+        class="banner-image-left" />
+      <div class="banner-title">RANKING TENIS <br> POLIDEPORTIVO <br>LA ELIPA</div>
+      <img src="a_cute_fat_teal_dragon_with_right.jpeg" alt="Logo_polideportivo_dragon" alt="Logo polideportivo dragon"
+        class="banner-image-right" />
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <div class="main-content">
+    <!-- Tabla de Ranking -->
+    <div class="ranking-table">
+      <h2>Ranking Jugadores</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Posición</th>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Núm. Partidos</th>
+            <th>Núm. Puntos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Levi</td>
+            <td>665665665</td>
+            <td>12</td>
+            <td>24</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Orca</td>
+            <td>998998998</td>
+            <td>11</td>
+            <td>19</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Apolo</td>
+            <td>611611611</td>
+            <td>9</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Eren</td>
+            <td>646646646</td>
+            <td>7</td>
+            <td>9,5</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Caja derecha -->
+    <div class="right-box">
+      <div class="contact-box">
+        <h3>Contacta con el admin</h3>
+        <p>Teléfono: 123-456-7890</p>
+      </div>
+
+      <!-- Caja acceso -->
+      <div class="access-box">
+        <div class="access1-box">
+          <h3>Acceso admin</h3>
+          <form id="adminForm" onsubmit="verificarContraseña(); return false;">
+            <p>Contraseña: <input type="password" id="password" placeholder="Introduce la contraseña"
+                aria-label="Contraseña" required></p>
+            <p>
+              <button type="submit">Acceder</button>
+              <button type="button" onclick="location.href='pantalla_inicio.html'">Salir</button>
+            </p>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Botón en la parte inferior izquierda -->
+  <div class="footer">
+    <button onclick="location.href='pantalla_jugador.html'">Ver al primer jugador del ranking</button>
+  </div>
+  <script>
+    function verificarContraseña() {
+      const campoPassword = document.getElementById('password');
+      const contraseña = campoPassword.value;
+      if (contraseña === 'elipatenis') {
+        // Redirigir a la pantalla de administración
+        window.location.href = 'pantalla_admin.html';
+      } else {
+        // Mostrar alerta y limpiar el campo
+        alert('La contraseña no es correcta.');
+        campoPassword.value = '';
+      }
+    }
+  </script>
+
+
+</body>
+
+</html>
